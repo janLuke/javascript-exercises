@@ -90,7 +90,7 @@ function updateTimer(secs){
     if(secs == 0){
         gameOver();
     } else {
-        setTimeout(updateTimer, 1000, secs - 1);
+        timerId = setTimeout(updateTimer, 1000, secs - 1);
     }
 }
 
