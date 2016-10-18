@@ -5,93 +5,19 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <title>Guess the number!</title>
-        <script src="guessNumberGame.js">
-        </script>
-        <style>
-            body {
-                margin: 0;
-                text-align: center;
-            }
-            h1 {
-                margin: 0 auto 1em;
-                padding: 1em;
-                background: #0d47a1;
-                box-shadow: 0 0 15px 2px rgba(0,0,0, .6);
-                font: bold 3em sans-serif;
-                color: white;
-            }
-            form {
-                margin: 0 auto 4em;
-                width: 50%;
-                max-width: 30em;
-                padding: 50px 50px 25px;
-                font: 120% arial;
-                text-align: center;
-                background: white;
-                box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-            #response {
-                margin: 1em 0;
-                font-size: 90%;
-                border-radius: 5px;
-                padding: 1em;
-            }
-            .invalid {
-                background: rgb(255, 150, 150);
-                color: rgb(200, 0, 0);
-            }
-            .valid {
-                color: gray;
-                background: rgb(220, 220, 220);
-            }
-            .rightAnswer {
-                background: lightgreen;
-                color: green;
-            }
-            input[type=text] {
-                box-sizing: border-box;
-                border: 1px solid lightgray;
-                width: 2.5em;
-                height: 2em;
-                margin: .3em 0;
-                text-align: center;
-                font-size: 300%;
-            }
-            input[type=text]:hover {
-                box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
-                border: 1px solid #2196f3;
-            }
-            input[type=text]:focus {
-                box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
-                border:  2px solid #2196f3;
-            }
-            input[type=text]:disabled {
-                background: rgb(250,250,250);
-            }
-            button {
-                background: #2196f3;
-                padding: .5em 2em;
-                width: 100%;
-                color: white;
-                font-size: 100%;
-                border: 0px;
-            }
-            button:hover{
-                box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.2);
-                cursor: auto;
-            }
-        </style>
-       </head>
-    <body onload="newGame()">
-        <h1>Guess the number game!</h1>
-        <form action="javascript: return false;" onsubmit="return onInput();">
-            <label>Enter an integer between 1 and 100 and press enter</label><br>
-            <input type="text" name="guess_text" id="input_text" maxlength="3">
-            <div id="response" class="valid">
-            </div>
-            <button type="button" onclick="newGame()">Start a new game</button>
-        </form>
-    </body>
+  <head>
+    <title>Guess the number!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="guessNumberGame.js"></script>
+  </head>
+  
+  <body onload="newGame()">
+      <h1>Guess the number game!</h1>
+      <form action="javascript: return false;" onsubmit="return onInput();">
+          <label>Enter an integer between 1 and 100 and press enter</label><br>
+          <input type="text" name="guess_text" id="input_text" maxlength="3">
+          <div id="response" class="valid"></div>
+          <button type="button" onclick="newGame()">Start a new game</button>
+      </form>
+  </body>
 </html>

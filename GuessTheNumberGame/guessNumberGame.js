@@ -1,10 +1,4 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-var target;
+var target;  // number to guess
 var input;
 var response;
 var guesses;
@@ -35,7 +29,6 @@ function output(msg, cssClass) {
     response.innerHTML = msg;
     response.className = cssClass;
 }
-
 
 function onInput(){
     var v = input.value;
