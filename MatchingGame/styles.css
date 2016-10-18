@@ -15,6 +15,7 @@ p {
 #container {
   width: 1002px;
   margin: 1em auto;
+  padding: 0;
 }
 
 .side {
@@ -42,22 +43,25 @@ p {
   transform: scale(1.2);
 }
 
-.label {
-  display: inline-block;
-  width: 25%;
+#game-info-bar {
+  background: darkblue;
+  color: white;
+  overflow: auto;
+}
+
+.game-info {
+  float: right;
+  padding: .5em 1em;
+  text-align: left;
   font-family: sans-serif;
   font-size: 1.5em;
-  font-weight: bold;
 }
 
-#timer {
-  position: relative;
+#timer-info {
   float: left;
-  margin-left: 10%;
 }
 
-.timerFont {
-  font-size: 32pt;
-  color: red;
-  background-color: black;
+#sides-container {
+  margin: 0;
+  padding: 0;
 }
