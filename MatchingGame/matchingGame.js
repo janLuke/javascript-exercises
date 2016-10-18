@@ -4,6 +4,8 @@ var numFaces = initNumFaces;
 var facesAddedOnNextLevel = 5;
 var level = 1;
 var leftSide, rightSide, body, levelSpan, numFacesSpan;
+var timer, timerId;
+var startingTime = 60;
 var imgPath = "smile.png";
 var sideSize = 500; // in pixels
 var faceSize = 80;  // in pixels
@@ -14,7 +16,8 @@ var maxCoor = sideSize - faceSize;  // max value for a coordinate
 document.addEventListener("DOMContentLoaded", function (event) {
   leftSide = document.getElementById("leftSide");
   rightSide = document.getElementById("rightSide");
-  
+
+  timer = document.getElementById("timer");
   levelSpan = document.getElementById("level");
   numFacesSpan = document.getElementById("numFaces");
   
@@ -47,7 +50,8 @@ function newGame() {
   rightSide.appendChild(leftSideCopy);
   
   // Go to the next level when the last face is clicked
-  leftSide.lastChild.addEventListener("click", nextLevel); 
+  leftSide.lastChild.addEventListener("click", nextLevel);
+  initTimer(timer, startingTime);
 }
 
 function nextLevel(event) {
@@ -69,8 +73,32 @@ function removeAllChildren (node) {
   }
 }
 
+function updateTimer(timer, secs){
+    var secs2str = document.createElement("div");
+    secs2str.innerHTML = secs.toString();
+    secs2str.classList.add("timerFont");
+    timer.removeChild(timer.firstChild);
+    timer.appendChild(secs2str);
+    if(secs == 0){
+        clearTimeout(timerId);
+        gameOver();
+    } else {
+        setTimeout(updateTimer, 1000, timer, secs - 1);
+    }
+}
+
+function initTimer(timer, secs) {
+    var secs2str = document.createElement("div");
+    secs2str.classList.add("timerFont");
+    secs2str.innerHTML = secs.toString();
+    timer.appendChild(secs2str);
+    timerId = setTimeout(updateTimer, 1000, timer, secs-1);
+}
+
+
 function gameOver() {
     alert("Game Over!");
+    removeAllChildren(timer);
     level = 1;
     numFaces = initNumFaces;
     clearFaces();
