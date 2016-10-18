@@ -13,14 +13,23 @@
   <p>Click on the extra smile face on the left.</p>
   
   <div id="container">
-     
-    <span class="label">Level: <span id="level"></span></span>
-    <span class="label">Number of faces: <span id="numFaces"></span></span>
    
-    <div id="leftSide" class="side"></div>
+    <div id="game-info-bar">
+      <div class="game-info" id="timer-info">
+        Time: <span id="timer"></span>
+      </div>
+      <div class="game-info">
+        Level: <span id="level"></span>
+      </div>
+      <div class="game-info">
+        Number of faces: <span id="numFaces"></span>
+      </div>
+    </div>
     
-    <div id="rightSide" class="side"></div>
-    
+    <div id="sides-container">
+      <div id="leftSide" class="side"></div>
+      <div id="rightSide" class="side"></div>
+    </div>
   </div>
 </body>
 
